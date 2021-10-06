@@ -1,0 +1,25 @@
+#7. Napisz funkcję która pobiera jako argumenty liczby całkowite a,b, N
+# i zwraca listę N liczb losowych całkowitych z przedziału [a,b].
+# Przetesuj ją w funkcji main.
+
+def main():
+    import random
+    a = int(input("Podaj liczbę całkowitą a, większą od 0: "))
+    if a<=0:
+        print("Błędne dane. Wprowadź jeszcze raz")
+        return main()
+    b = int(input("Podaj liczbę całkowitą b, taką że b>=a: "))
+    if b<a:
+        print("Błędne dane. Wprowadź jeszcze raz")
+        return main()
+    n = int(input("Podaj liczbę całkowitą, większą od 0: "))
+    if n<=0:
+        print("Błędne dane. Wprowadź jeszcze raz")
+        return main()
+    lista=[]
+    for i in range(n):
+        c=random.randrange(a,b+1,1)
+        lista.append(c)
+    return(print(lista))
+
+main()
