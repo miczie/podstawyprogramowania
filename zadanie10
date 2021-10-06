@@ -1,0 +1,41 @@
+"""10 .Napisz definicję funkcji, która sprawdza, czy dana liczba jest doskonała,
+to znaczy czy jest sumą swoich dzielników właściwych (czyli mniejszych od niej
+np. 6=1+2+3 jest doskonała).
+Napisz program, który znajduje cztery najmniejsze liczby doskonałe"""
+
+def czy_dosk(n):
+
+    a=1
+    lista=[]
+    suma=0
+    while a <= (n/2): #suma dzielników
+        if n % a == 0:
+            lista.append(a)
+            a = a + 1
+        else:
+            a = a +1
+    for element in lista:
+        suma=suma+element
+
+    if suma==n: #czy doskonała
+        return True
+    else:
+        return False
+
+
+def main():
+    n=int(input("Podaj jakąś liczbę dodatnią całkowitą: " ))
+    if czy_dosk(n)==True:
+        print("tak, jest doskonała")
+    else:
+        print("nie jest doskonała")
+    tablica=[]
+    i=1
+    while len(tablica)<4:
+        if czy_dosk(i)==True:
+            tablica.append(i)
+        i+=1
+
+    print(tablica)
+
+main()
