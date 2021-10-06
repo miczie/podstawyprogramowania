@@ -1,0 +1,26 @@
+"""3. Napisz funkcję, która pobiera jako argumenty dwie listy.
+Zwraca ona nową listę, która składa się z tych elementów,
+które jednocześnie występują na obu listach.
+Kolejność elementów w nowej liście, jest taka jak na pierwszej liscie.
+Przetesuj ją w funkcji main."""
+
+def main():
+    lista1=[]
+    lista11=[]
+    lista2=[]
+    lista22=[]
+    lista3=[]
+
+    lista1=input("Podaj pierwszą listę słów (aaa,bbb,ccc): ")
+    for element in lista1.split(','):  # [aaa,bbb,ccc] -> ['aaa','bbb','ccc'] 
+        lista11.append(element) #dodajemy wyrazy do lista11
+
+    lista2=input("Podaj drugą listę słów (aaa,bbb,ccc): ")
+    for element in lista2.split(','):# [aaa,bbb,ccc] -> ['aaa','bbb','ccc']
+        lista22.append(element) #dodajemy do lista22
+
+    lista3=[element for element in lista11 if element in lista22] #lista3 = wyrazy, które są w lista11 i lista22
+
+    return print(lista3) #zwracamy listę wyjściową
+
+main()
