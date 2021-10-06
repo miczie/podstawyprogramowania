@@ -1,0 +1,29 @@
+#8.Napisz definicję funkcji, która policzy dwie największe wartości z danej listy.
+#Nie używaj wbudowanych funkcji, takich jak max. Zmień definicję funkcji tak, żeby akceptowała dowolną liczbę argumentów, ale nie mniej niż dwa.
+#jest pętla na maks, teraz trzeba dodać ile tych maksów chcemy zsumować
+
+#zabezpieczenie n>=2
+
+def main():
+    lista=[]
+    lista2=[]
+    lista3=[]
+    lista=input("Podaj listę liczb (x,y,z,...): ") #lista wejściowa
+    n=int(input("Podaj ilość liczb, które chcesz zsumować: "))
+    for element in lista.split(','):  #[x,y,z] -> ['aaa','bbb','ccc']
+        lista2.append(float(element)) #lista2=['x','y','z'] (l całkowite)
+    print(lista2)
+    maks1=float(lista2[0])#przypisanie maksa do pierwszej wartości w lista2
+    for i in range(n):#pętla szukająca n największych liczb
+        for element in lista2:
+            if element>maks1:
+                maks1=element
+        lista3.append(maks1)#maks1 dodajemy do lista3
+        lista2.remove(maks1)#maks1 usuwamy z lista2
+        maks1 = float(lista2[0]) #przypisujemy maks1 do wartości która pozostała w lista2
+
+    #print(lista2)
+    #print(lista3)
+    return print(sum(lista3)) #można dodać suma n największych liczb to
+
+main()
