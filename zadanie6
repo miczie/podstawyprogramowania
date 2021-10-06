@@ -1,0 +1,15 @@
+def main():
+    kolor1=input("Podaj kolor podstawowy (czerwony/niebieski/żółty) :")
+    kolor2=input("Podaj kolor podstawowy (czerwony/niebieski/żółty) :")
+    return print(nowy_kolor(kolor1,kolor2))
+def nowy_kolor(kolor1,kolor2):
+    if ((kolor1 == "czerwony" and kolor2 == "niebieski") or (kolor2 == "czerwony" and kolor1 == "niebieski")):
+        return "fioletowy"
+    if ((kolor1 == "czerwony" and kolor2 == "żółty") or (kolor2 == "czerwony" and kolor1 == "żółty")):
+        return "pomarańczowy"
+    if ((kolor1 == "żółty" and kolor2 == "niebieski") or (kolor2 == "żółty" and kolor1 == "niebieski")):
+        return "zielony"
+    else:
+        return kolor1
+
+main()
