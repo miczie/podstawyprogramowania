@@ -1,0 +1,62 @@
+"""11. Napisz definicję funkcji, która zamienia jednostki miar długości,
+powierzchni
+i objętości z  angielskich na polskie i odwrotnie (np. mile na kilometry,
+yardy kwadratowe na metry
+kwadratowe i stopy sześcienne na centymetry sześcienne).
+Przyjmij, że wejście ma określoną
+przez Ciebie postać, która pozwoli na łatwe rozpoznanie jednostki miary.
+Jednostki długości:
+1 cal (in) = 25,4 mm
+1 stopa (ft) = 12 cali = 30,48 cm
+1 jard (yd) = 3 stopy = 91,44 cm
+1 mila (mi) = 1609,344 m """
+
+polskie = {"mm","cm","m","km"}
+angielskie = {"in","ft","yd","mi"}
+print("Wielkość fizyczna składa się z wartości liczbowej oraz jednostki miary")
+a=input("Co liczymy (długość/powierzchnia/objętość)?")
+b=float(input("Podaj wartość liczbową (część całkowitą i ułamkową oddziel kropką): ")
+c=input("Podaj jednostkę miary")
+d=input("Na jaką jedn
+#x-wartość po zmianie jednostkiostkę chcesz przeliczyć podaną wielkość?")
+#słownik krócej !!
+    if c in polskie:
+        if (c==("mm")) and (d==("in")):
+            x=0.0393700787*b
+        if (c==("mm")) and (d==("ft")):
+            x=0.0032808399*b
+        if (c == ("mm")) and (d == ("yd")):
+            x=0.0010936133*b
+        if (c == ("mm")) and (d == ("mi")):
+            x=6.21371192*(10**-7)*b
+        if (c==("cm")) and (d==("in")):
+            x=0.0393700787*b*10
+        if (c==("cm")) and (d==("ft")):
+            x=0.0032808399*b*10
+        if (c == ("cm")) and (d == ("yd")):
+            x=0.0010936133*b*10
+        if (c == ("cm")) and (d == ("mi")):
+            x=6.21371192*(10**-7)*b*10
+        if (c==("m")) and (d==("in")):
+            x=0.0393700787*b*100
+        if (c==("m")) and (d==("ft")):
+            x=0.0032808399*b*100
+        if (c == ("m")) and (d == ("yd")):
+            x=0.0010936133*b*100
+        if (c == ("m")) and (d == ("mi")):
+            x=6.21371192*(10**-7)*b*100
+        if (c==("km")) and (d==("in")):
+            x=0.0393700787*b*1000
+        if (c==("km")) and (d==("ft")):
+            x=0.0032808399*b*1000
+        if (c == ("km")) and (d == ("yd")):
+            x=0.0010936133*b*1000
+        if (c == ("km")) and (d == ("mi")):
+            x=6.21371192*(10**-7)*b*1000
+
+if a==("długość"):
+    return print(x,d)
+if a==("powierzchnia"):
+    return print(x**2,d+"^2")
+if a==("objętość"):
+    return print(x**3,d+"^3")
