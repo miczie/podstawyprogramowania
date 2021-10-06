@@ -1,0 +1,18 @@
+"""1. Napisz funkcję, która pobiera jako argument listę
+słów i zwraca nową listę, która składa się z tych słów listy wejsciowej,
+które rozpoczynają się od litery 'a'. Przetesuj ją w funkcji main."""
+
+def main():
+    lista = []
+    lista2 = []
+    lista3 = []
+    lista = input("Podaj listę wyrazów, wyrazy oddziel przecinkiem (aaa,bbb,ccc): ") #lista wejściowa
+    for element in lista.split(','):  # aaa,bbb,ccc -> ['aaa','bbb','ccc'] dzielimy ciąg znaków na wyrazy
+        lista2.append(element) #dodajemy do nowej lista2
+    for element in lista2:
+        if ord(element[0]) == 97: #czy pierwszy znak wyrazy to 'a'
+            lista3.append(element) #dodajemy wyraz do wyjściowej listy
+    return print(lista3) #zwracamy wyjściową listę
+
+main()
+
