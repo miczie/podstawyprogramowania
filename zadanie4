@@ -1,0 +1,18 @@
+"""Papier, kamień, nożyce"""
+def main():
+    gracz1=input("Gracz 1 - wybór (papier/kamień/nożyce): ")
+    gracz2=input("Gracz 2 - wybór (papier/kamień/nożyce): ")
+    return print(wynik(gracz1,gracz2))
+
+def wynik(gracz1,gracz2):
+    wygrane1 = [("papier", "kamień"), ("kamień", "nożyce"), ("nożyce", "papier")]
+    if gracz1 == gracz2:
+        return 0
+    else:
+        if (gracz1,gracz2) in wygrane1:
+            return 1
+        else:
+            return 2
+
+
+main()
