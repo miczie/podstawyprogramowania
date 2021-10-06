@@ -1,0 +1,29 @@
+#5. Napisz program, w którym w grę papier-nożyce-kamień grają człowiek
+#i komputer. Człowiek podaje swój wybór, a komputer losuje swój wybór.
+#Gra trwa aż do rozstrzygnięcia (jeśli w danej rundzie jest remis,
+#to jest następna runda).
+
+def main():
+    import random
+    gracz=input("Gracz - wybór (papier/kamień/nożyce): ")
+    komputer=random.choice(["papier","kamień","nożyce"])
+    print("Komputer - wybór (papier/kamień/nożyce): ", komputer)
+    return wynik(gracz,komputer)
+
+def wynik(gracz,komputer):
+    if gracz == komputer:
+        return main()
+    if gracz == "papier" and komputer == "kamień":
+        return print("1")
+    if gracz == "papier" and komputer == "nożyce":
+        return print("2")
+    if gracz == "kamień" and komputer == "papier":
+        return print("2")
+    if gracz == "kamień" and komputer == "nożyce":
+        return print("1")
+    if gracz == "nożyce" and komputer == "papier":
+        return print("1")
+    if gracz == "nożyce" and komputer == "kamień":
+        return print("2")
+
+main()
