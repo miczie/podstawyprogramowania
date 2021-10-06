@@ -1,0 +1,30 @@
+"""2. Napisz funkcję, która pobiera jako argumenty listę słów i liczbę
+naturalną N. Zwraca ona nową listę, która składa się z tych słów listy
+wejsciowej, które rozpoczynają się od wielkiej litery
+(angielskiego alfabetu) i których długosć jest równa N.
+Przetesuj ją w funkcji main.
+Podaj słowo ("stop" przerwie dodawanie): ala
+Podaj słowo ("stop" przerwie dodawanie): Ola
+Podaj słowo ("stop" przerwie dodawanie): STOP
+Podaj długość słowa: 3
+['Ola']"""
+
+def main():
+    lista=[]
+    lista2=[]
+    while True:
+        slowo=input("Podaj słowo, 'stop' przerwie dodawanie: ")
+        if slowo=="stop":
+            break #jeżeli stop to przerywa
+        else:
+            lista.append(slowo) #dodaje wyraz do listy
+    n = int(input("Podaj liczbę naturalną: "))
+
+    for element in lista:
+        if (ord(element[0]) >= 65 and ord(element[0]) <= 90) and len(element) == n: #sprawdzamy czy wielka literę ang alfabetu i długość wyrazu
+            lista2.append(element) #dodaje wyraz do listy wyjściowej
+
+    return print(lista2) #zwraca listę wyjściową
+
+
+main()
